@@ -1,0 +1,1 @@
+# SMA_Miniprojet_IA
