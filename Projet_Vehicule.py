@@ -3,15 +3,20 @@ import numpy as np
 
 class Vehicule:
 
-    def __init__(self, marque, annee):
+    def __init__(self, marque, annee,color):
         self.marque = marque
         self.annee = annee
         self.vitesse = 0
         self.position = np.array([0, 0])
+        self.color = color
 
     def accelerer(self, augmentation):
         self.vitesse += augmentation
         print(f"{self.marque} accélère à {self.vitesse} km/h")
+
+    def freiner(self,freine):
+        self.vitesse -= freine
+        print(f"{self.marque} freine de {self.vitesse} km/h")
 
     def avancer(self, x, y):
         mouvement = np.array([x, y])
@@ -26,9 +31,11 @@ class Vehicule:
         print(f"Vitesse : {self.vitesse} km/h")
         print(f"Position : {self.position}")
 
-jimny = Vehicule("Suzuki Jimny", 2024)
+suzuki_jimmy = Vehicule("Suzuki Jimny", 2024, color = "")
 
-jimny.accelerer(40)
-jimny.avancer(10, 5)
-jimny.activer_4x4()
-jimny.afficher_etat()
+suzuki_jimmy.accelerer(40)
+suzuki_jimmy.avancer(10, 5)
+suzuki_jimmy.activer_4x4()
+suzuki_jimmy.afficher_etat()
+suzuki_jimmy.freiner(10)
+suzuki_jimmy.color = "blue"
