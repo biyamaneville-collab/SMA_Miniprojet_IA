@@ -14,9 +14,11 @@ class Vehicule:
         self.vitesse += augmentation
         print(f"{self.marque} accélère à {self.vitesse} km/h")
 
-    def freiner(self,freine):
-        self.vitesse -= freine
-        print(f"{self.marque} freine de {self.vitesse} km/h")
+    def freiner(self, frein):
+        self.vitesse -= frein
+        if self.vitesse < 0:
+            self.vitesse = 0
+        print(f"{self.marque} freine de {frein} km/h")
 
     def avancer(self, x, y):
         mouvement = np.array([x, y])
@@ -30,12 +32,13 @@ class Vehicule:
         print(f"{self.marque} ({self.annee})")
         print(f"Vitesse : {self.vitesse} km/h")
         print(f"Position : {self.position}")
+        print(f"Couleur : {self.color}")
 
-suzuki_jimmy = Vehicule("Suzuki Jimny", 2024, color = "")
+
+suzuki_jimmy = Vehicule("Suzuki Jimny", 2024, "Blue")
 
 suzuki_jimmy.accelerer(40)
 suzuki_jimmy.avancer(10, 5)
 suzuki_jimmy.activer_4x4()
 suzuki_jimmy.afficher_etat()
 suzuki_jimmy.freiner(10)
-suzuki_jimmy.color = "blue"
