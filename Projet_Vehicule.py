@@ -4,7 +4,7 @@ import numpy as np
 
 class Vehicule:
 
-    def __init__(self, marque, annee,color):
+    def __init__(self, marque, annee, color):
         self.marque = marque
         self.annee = annee
         self.vitesse = 0
@@ -19,7 +19,7 @@ class Vehicule:
         self.vitesse -= frein
         if self.vitesse < 0:
             self.vitesse = 0
-        print(f"{self.marque} freine de {frein} km/h")
+            print(f"{self.marque} freine de {frein} km/h")
 
     def avancer(self, x, y):
         mouvement = np.array([x, y])
@@ -40,26 +40,24 @@ class Vehicule:
 
 #Partie 2 : La classe Enfant(héritage)
 
-        class Camion(Vehicule):
+class Camion(Vehicule):
 
-            def __init__(self, marque, annee, capacite_tonnes):
-                super().__init__(marque, annee)
-                self.capacite_tonnes = capacite_tonnes
-                self.charqement_actuel = 0
+    def __init__(self, marque, annee, capacite_tonnes):
+        super().__init__(marque, annee, color = "")
+        self.capacite_tonnes = capacite_tonnes
+        self.chargement_actuel = 0
 
-            def charger(self, poids):
-                if (self.chargement_actuel + poids) <= self.capacite_tonnes:
-                    self.charqement_actuel += poids
-                    print(f"Chargé : {poids}t")
-                    print(f"Total : {self.chargement_actuel}t")
-                else:
-                    print("Erreur : Trop lourd !")
+    def charger(self, poids):
+        if (self.chargement_actuel + poids) <= self.capacite_tonnes:
+            self.chargement_actuel += poids
+            print(f"Chargé : {poids}t")
+            print(f"Total : {self.chargement_actuel}t")
+        else:
+            print("Erreur : Trop lourd !")
 
 #Partie 3 : Exécution(Le Main)
 
-if names == "main"
-
-print("----------- SIMULATION ------------")
+print("----------------- SIMULATION ------------------")
 
 ma_ferrari = Vehicule("Ferrari",2024, "black")
 mon_volo = Camion("Volvo",2020,20)
