@@ -1,4 +1,4 @@
-#La class véhicule
+#Partie 1 (Classe Parente)
 import numpy as np
 
 class Vehicule:
@@ -34,10 +34,29 @@ class Vehicule:
         print(f"Position : {self.position}")
         print(f"Couleur : {self.color}")
 
-suzuki_jimmy = Vehicule("Suzuki Jimny", 2024, "Blue")
+    def klaxonner(self):
+        print("Tuut Tuut Pi Piiii !!!")
 
-suzuki_jimmy.accelerer(40)
-suzuki_jimmy.avancer(10, 5)
-suzuki_jimmy.activer_4x4()
-suzuki_jimmy.afficher_etat()
-suzuki_jimmy.freiner(10)
+#Partie 2 (Classe enfant)
+
+        class Vehicule:
+
+            def __init__(self, marque, annee, nombre_porte):
+                self.marque = marque
+                self.annee = annee
+                self.nombre_porte = nombre_porte
+
+                class Camion(Vehicule):
+
+                    def __init__(self, marque, annee, capacite_tonnes):
+                        super().__init__(marque, annee)
+                        self.capacite_tonnes = capacite_tonnes
+                        self.charqement_actuel = 0
+
+                    def charger(self, poids):
+                        if (self.chargement_actuel + poids) <= self.capacite_tonnes:
+                            self.charqement_actuel += poids
+                            print(f"Chargé : {poids}t")
+                            print(f"Total : {self.chargement_actuel}t")
+                        else:
+                            print("Erreur : Trop lourd !")
