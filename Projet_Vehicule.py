@@ -34,7 +34,6 @@ class Vehicule:
         print(f"Position : {self.position}")
         print(f"Couleur : {self.color}")
 
-
 suzuki_jimmy = Vehicule("Suzuki Jimny", 2024, "Blue")
 
 suzuki_jimmy.accelerer(40)
