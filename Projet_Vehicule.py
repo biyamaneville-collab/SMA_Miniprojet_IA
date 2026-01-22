@@ -19,7 +19,7 @@ class Vehicule:
         self.vitesse -= frein
         if self.vitesse < 0:
             self.vitesse = 0
-            print(f"{self.marque} freine de {frein} km/h")
+        print(f"{self.marque} freine de {frein} km/h")
 
     def avancer(self, x, y):
         mouvement = np.array([x, y])
@@ -42,8 +42,8 @@ class Vehicule:
 
 class Camion(Vehicule):
 
-    def __init__(self, marque, annee, capacite_tonnes):
-        super().__init__(marque, annee, color = "")
+    def __init__(self, marque, annee, color, capacite_tonnes):
+        super().__init__(marque, annee, color)
         self.capacite_tonnes = capacite_tonnes
         self.chargement_actuel = 0
 
@@ -60,7 +60,7 @@ class Camion(Vehicule):
 print("----------------- SIMULATION ------------------")
 
 ma_ferrari = Vehicule("Ferrari",2024, "black")
-mon_volo = Camion("Volvo",2020,20)
+mon_volo = Camion("Volvo",2020,"red",15)
 
 ma_ferrari.accelerer(100)
 ma_ferrari.avancer(50,30)
