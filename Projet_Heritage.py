@@ -1,4 +1,0 @@
-
-
-
-toyota_harrier = Vehicule()

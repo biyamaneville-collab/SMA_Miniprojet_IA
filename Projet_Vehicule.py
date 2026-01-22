@@ -1,4 +1,5 @@
-#Partie 1 (Classe Parente)
+#Partie 1 : La classe Parente(Véhicule)
+
 import numpy as np
 
 class Vehicule:
@@ -37,26 +38,37 @@ class Vehicule:
     def klaxonner(self):
         print("Tuut Tuut Pi Piiii !!!")
 
-#Partie 2 (Classe enfant)
+#Partie 2 : La classe Enfant(héritage)
 
-        class Vehicule:
+        class Camion(Vehicule):
 
-            def __init__(self, marque, annee, nombre_porte):
-                self.marque = marque
-                self.annee = annee
-                self.nombre_porte = nombre_porte
+            def __init__(self, marque, annee, capacite_tonnes):
+                super().__init__(marque, annee)
+                self.capacite_tonnes = capacite_tonnes
+                self.charqement_actuel = 0
 
-                class Camion(Vehicule):
+            def charger(self, poids):
+                if (self.chargement_actuel + poids) <= self.capacite_tonnes:
+                    self.charqement_actuel += poids
+                    print(f"Chargé : {poids}t")
+                    print(f"Total : {self.chargement_actuel}t")
+                else:
+                    print("Erreur : Trop lourd !")
 
-                    def __init__(self, marque, annee, capacite_tonnes):
-                        super().__init__(marque, annee)
-                        self.capacite_tonnes = capacite_tonnes
-                        self.charqement_actuel = 0
+#Partie 3 : Exécution(Le Main)
 
-                    def charger(self, poids):
-                        if (self.chargement_actuel + poids) <= self.capacite_tonnes:
-                            self.charqement_actuel += poids
-                            print(f"Chargé : {poids}t")
-                            print(f"Total : {self.chargement_actuel}t")
-                        else:
-                            print("Erreur : Trop lourd !")
+if names == "main"
+
+print("----------- SIMULATION ------------")
+
+ma_ferrari = Vehicule("Ferrari",2024, "black")
+mon_volo = Camion("Volvo",2020,20)
+
+ma_ferrari.accelerer(100)
+ma_ferrari.avancer(50,30)
+
+mon_volo.accelerer(50)
+
+ma_ferrari.klaxonner()
+mon_volo.charger(15)
+mon_volo.charger(10)
