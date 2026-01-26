@@ -26,7 +26,7 @@ class RobotIA:
             print(f"!!! {self.nom} : Obstcale en vue !!!")
             self.reculer(0, 1)
         elif ordre == "RALENTIR":
-            print(f"{self.nom} : Évite l'obstacle...")
+            print(f"{self.nom} : Évite l'obstaclepyht...")
             self.avancer(1, 0.5)
         else:
             print(f"{self.nom} : Route libre.")
@@ -45,5 +45,8 @@ class RobotIA:
 print("-------------- TEST --------------")
 
 mon_robot = RobotIA("Wall-E", 0, 0)
-# Simulation d'un obstacle à 3 mètres
+mon_robot.avancer(12,3)
+mon_robot.scanner(2)
+mon_robot.reculer(3,9)
+mon_robot.piloter(2)
 mon_robot.piloter(3)
